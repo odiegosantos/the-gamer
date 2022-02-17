@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+}
+a::before {
+  content: '';
+  background-color: hsla(196, 61%, 58%, .75);
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+a:hover::before {
+  bottom: 0;
+  height: 100%;
+}
+
+#btn-mobile {
+  display: none;
+}
+.header {
+  position: fixed;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card {
+  height: 100vh;
+  background-image: url('../images/nvidea.jpg');
+}
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navigation__menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+.navigation__menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+/* ----------------- */
+/* responsive menu */
+@media (max-width: 600px) {
+  .header {
+    background-color: #000;
+  }
+  .navigation__menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 70px;
+    right: 0;
+    background: #e7e7e7;
+    transition: .6s;
+    z-index: 1000;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #navigation.active .navigation__menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  .navigation__menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: .5rem;
+  }
+  .btn-open {
+    display: block;
+    width: 20px;
+    border-top: 2px solid;
+  }
+  .btn-open::after, .btn-open::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    position: relative;
+    transition: .3s;
+  }
+  #navigation.active .btn-open {
+    border-top-color: transparent;
+  }
+  #navigation.active .btn-open::before {
+    transform: rotate(135deg);
+  }
+  #navigation.active .btn-open::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
