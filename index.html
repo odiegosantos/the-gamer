@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,12 @@
   <link rel="stylesheet" href="css/main.css">
   <title>Palacio Gamer</title>
 </head>
+
 <body>
   <header class="header">
-    <a class="header__logo" id="logo">Logo</a>
-    <nav id="navigation">
-      <button id="btn-mobile">
-        <span class="btn-open"></span>
-      </button>
+    <a class="header__logo" href="#">GAMER</a>
+    <div class="btn-mobile"></div>
+    <nav class="navigation">
       <ul class="navigation__menu">
         <li class="navigation__menu--link"><a href="#1" onclick="toggleMenu();">Sobre</a></li>
         <li class="navigation__menu--link"><a href="#2" onclick="toggleMenu();">Produtos</a></li>
@@ -21,8 +21,13 @@
         <li class="navigation__menu--link"><a href="#4" onclick="toggleMenu();">Contato</a></li>
       </ul>
     </nav>
-  </header>
-  <section class="card"></section>
-  <script src="js/main.js"></script>
+  </header>  
+  <section class="hero">
+    <h1 class="hero__title">The maximum power Lorem.</h1>
+    <p class="hero__subhead">Lorem, ipsum dolor sit amet consectetur adipisicing.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, veniam!</p>
+  </section>
+  <div class="hero-img"></div>
 </body>
+
 </html>

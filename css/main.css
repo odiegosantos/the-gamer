@@ -1,12 +1,18 @@
+/* ---------------------------------------- Reset ---------------------------------------- */    
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
 }
 body {
-  height: 100vh;
+  margin: .5rem;
   font-family: sans-serif;
 }
+
+/* ---------------------------------------- Links ---------------------------------------- */    
 a {
   text-decoration: none;
   color: #fff;
@@ -15,112 +21,92 @@ a {
 }
 a::before {
   content: '';
-  background-color: hsla(196, 61%, 58%, .75);
+  background-color: #53b2d5bf;
   position: absolute;
   left: 0;
-  bottom: 3px;
+  bottom: .1rem;
   width: 100%;
-  height: 8px;
+  height: .5rem;
   z-index: -1;
   transition: all .3s ease-in-out;
 }
-
 a:hover::before {
   bottom: 0;
   height: 100%;
 }
 
-#btn-mobile {
-  display: none;
-}
+/* ---------------------------------------- Header ---------------------------------------- */    
 .header {
-  position: fixed;
-  box-sizing: border-box;
-  width: 100vw;
-  padding: 1rem;
   display: flex;
-  align-items: center;
+  width: 100%;
   justify-content: space-between;
 }
-.card {
-  height: 100vh;
-  background-image: url('../images/nvidea.jpg');
-}
 .header__logo {
+  color: red;
   font-size: 1.5rem;
-  font-weight: bold;
+}
+
+/* ---------------------------------------- Navigation ---------------------------------------- */    
+.navigation {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+  width: 40%;
 }
 .navigation__menu {
   display: flex;
-  list-style: none;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.navigation__menu a {
-  display: block;
-  padding: 0.5rem;
+.navigation__menu--link a {
+  font-size: 1.5rem;
+  padding: 0 1rem;
 }
 
-/* ----------------- */
-/* responsive menu */
-@media (max-width: 600px) {
-  .header {
-    background-color: #000;
+/* ---------------------------------------- Sectio Hero ---------------------------------------- */    
+.hero {
+  width: 40%;
+  opacity: 0;
+  animation: moveDown 2s ease-in-out forwards;
+}
+.hero__title {
+  font-size: 4rem;
+  margin-top: 2em;
+  color: #353535;
+}
+.hero__subhead {
+  font-size: 1.4rem;
+}
+.hero__subhead {
+  color: #686868;
+}
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 1;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  z-index: -1;
+  background: url('../img/hero-image.jpg');
+  background-size: cover;
+  animation: imgDown 3s forwards;
+}
+    
+/* ---------------------------------------- Keyframes ---------------------------------------- */    
+@keyframes imgDown {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
-  .navigation__menu {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 0;
-    top: 70px;
-    right: 0;
-    background: #e7e7e7;
-    transition: .6s;
-    z-index: 1000;
-    visibility: hidden;
-    overflow-y: hidden;
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-  #navigation.active .navigation__menu {
-    height: calc(100vh - 70px);
-    visibility: visible;
-    overflow-y: auto;
+}
+@keyframes moveDown {
+  from {
+    transform: translateY(-100px);
   }
-  .navigation__menu a {
-    padding: 1rem 0;
-    margin: 0 1rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-  }
-  #btn-mobile {
-    display: flex;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    gap: .5rem;
-  }
-  .btn-open {
-    display: block;
-    width: 20px;
-    border-top: 2px solid;
-  }
-  .btn-open::after, .btn-open::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: currentColor;
-    margin-top: 5px;
-    position: relative;
-    transition: .3s;
-  }
-  #navigation.active .btn-open {
-    border-top-color: transparent;
-  }
-  #navigation.active .btn-open::before {
-    transform: rotate(135deg);
-  }
-  #navigation.active .btn-open::after {
-    transform: rotate(-135deg);
-    top: -7px;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
