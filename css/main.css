@@ -64,20 +64,26 @@ a:hover::before {
 
 /* ---------------------------------------- Sectio Hero ---------------------------------------- */    
 .hero {
-  width: 40%;
+  width: 50%;
+  height: 100vh;
   opacity: 0;
   animation: moveDown 2s ease-in-out forwards;
 }
 .hero__title {
-  font-size: 4rem;
-  margin-top: 2em;
-  color: #353535;
+  font-size: 9rem;
+  color: red;
+}
+.hero__title span {
+  font-size: 10rem;
+  color: #53b2d5bf;
 }
 .hero__subhead {
+  text-align: justify;
   font-size: 1.4rem;
 }
 .hero__subhead {
   color: #686868;
+  margin: 0 4rem 0 1rem;
 }
 .hero-img {
   position: absolute;
@@ -91,7 +97,43 @@ a:hover::before {
   background-size: cover;
   animation: imgDown 3s forwards;
 }
-    
+
+/* ---------------------------------------- Feacture ---------------------------------------- */    
+
+.section {
+  margin: 0 2rem;
+}
+.section__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section__item {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 3em;
+  margin-bottom: 8em;
+}
+.section__item img {
+  width: 30em;
+}
+.section__item.left {
+  grid-template-areas: "left right";
+}
+.section__item.left img {
+  grid-area: left;
+}
+.section__title {
+  text-align: center;
+  font-size: 2rem;
+  color: #353535;
+}
+.section__paragraph {
+  text-align: justify;
+  font-size: 1.5rem;
+  color: #686868;
+}
+
 /* ---------------------------------------- Keyframes ---------------------------------------- */    
 @keyframes imgDown {
   from {
