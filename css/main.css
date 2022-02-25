@@ -10,6 +10,7 @@
 body {
   margin: .5rem;
   font-family: sans-serif;
+  background-color: #53b2d507;
 }
 
 /* ---------------------------------------- Links ---------------------------------------- */    
@@ -100,38 +101,44 @@ a:hover::before {
 
 /* ---------------------------------------- Feacture ---------------------------------------- */    
 
-.section {
-  margin: 0 2rem;
-}
-.section__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 .section__item {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 3em;
-  margin-bottom: 8em;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  border-top: .1em solid #ff0000;
 }
-.section__item img {
-  width: 30em;
+.section__item:nth-child(2) {
+  border-top: .1em solid #000;
+}
+.section__item:nth-child(3) {
+  border-top: .1em solid #53b2d5;
 }
 .section__item.left {
-  grid-template-areas: "left right";
+  display: flex;
+  flex-direction: row-reverse;
 }
-.section__item.left img {
-  grid-area: left;
+.section__item img {
+  width: 50%;
+  height: 50%;
+  border-radius: 2px;
+  box-shadow: 2px 2px 10px #000;
+}
+.section__content {
+  padding: 5rem;
 }
 .section__title {
   text-align: center;
-  font-size: 2rem;
-  color: #353535;
+  font-size: 4rem;
+  color: red;
+}
+.section__title span {
+  color: #53b2d5;
+  cursor: progress;
 }
 .section__paragraph {
   text-align: justify;
   font-size: 1.5rem;
-  color: #686868;
+  color: #53b2d5;
 }
 
 /* ---------------------------------------- Keyframes ---------------------------------------- */    
