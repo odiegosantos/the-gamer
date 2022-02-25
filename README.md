@@ -13,7 +13,8 @@
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; 
 </p>
 
-<br>
+![the-gamer](https://user-images.githubusercontent.com/87211192/155785286-c2e0f53f-abca-4214-ba4c-fff2e5103ed1.png)
+
 
 ## :dart: About ##
 
