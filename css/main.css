@@ -13,28 +13,6 @@ body {
   background-color: #53b2d507;
 }
 
-/* ---------------------------------------- Links ---------------------------------------- */    
-.navigation__menu--link a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 700;
-  position: relative;
-}
-.navigation__menu--link a::before {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: .5rem;
-  bottom: .1rem;
-  left: 0;
-  z-index: -1;
-  background-color: #53b2d5bf;
-  transition: all .3s ease-in-out;
-}
-.navigation__menu--link a:hover::before {
-  bottom: 0;
-  height: 100%;
-}
 
 /* ---------------------------------------- Header ---------------------------------------- */    
 .header {
@@ -59,11 +37,30 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+/* ---------------------------------------- Links ---------------------------------------- */    
 .navigation__menu--link a {
   padding: 0 1rem;
   font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
 }
-
+.navigation__menu--link a::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: .5rem;
+  bottom: .1rem;
+  left: 0;
+  z-index: -1;
+  background-color: #53b2d5bf;
+  transition: all .3s ease-in-out;
+}
+.navigation__menu--link a:hover::before {
+  bottom: 0;
+  height: 100%;
+}
 /* ---------------------------------------- Sectio Hero ---------------------------------------- */    
 .hero {
   height: 100vh;
@@ -82,21 +79,18 @@ body {
 .hero__subhead {
   text-align: justify;
   font-size: 1.4rem;
-}
-.hero__subhead {
   margin: 0 4rem 0 1rem;
   color: #686868;
 }
 .hero-img {
   position: absolute;
   top: 0;
-  left: 1;
   right: 0;
   width: 50%;
   height: 100vh;
   z-index: -1;
-  background-size: cover;
   background: url('../img/hero-image.jpg');
+  background-size: cover;
   animation: imgDown 3s forwards;
 }
 
@@ -176,6 +170,9 @@ input {
   border-radius: .5em;
   background-color: #53b2d54d;
 }
+::placeholder {
+  color: #ffffff9f;
+}
 .btn {
   margin-top: 1rem;
   padding: 1rem;
@@ -193,6 +190,56 @@ input {
 .btn a {
   color: #fff;
 }
+
+/* ---------------------------------------- Responsive ---------------------------------------- */    
+
+@media (max-width: 991px) {
+  .navigation {
+    display: none;
+  }
+  .hero {
+    width: 90%;
+  }
+  .hero-img {
+    width: 100%;
+    background: url('../img/hero-image-mobile.jpg');
+    background-size: auto;
+  }
+  .hero__title {
+    padding-top: 15rem;
+    color: red;
+    font-size: 5rem;
+  }
+  .hero__title span {
+    color: #53b2d5bf;
+    font-size: 5rem;
+  }
+  .hero__subhead {
+    text-align: justify;
+    font-size: 1.4rem;
+    color: #686868;
+  }
+  .section__content {
+    padding: 2rem;
+  }
+  .section__title {
+    text-align: center;
+    font-size: 2rem;
+    color: #f00;
+  }
+  .section__item img {
+    display: none;
+  }
+  .footer {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .footer__form {
+    width: 90%;
+    background-color: #ffffff42;
+  }
+}
+
 /* ---------------------------------------- Keyframes ---------------------------------------- */    
 @keyframes imgDown {
   from {
