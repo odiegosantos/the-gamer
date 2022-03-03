@@ -22,8 +22,8 @@ Game store made with HTML, CSS and Javascript
 
 ## :sparkles: Features ##
 
-:x: Feature 1;\
-:x: Feature 2;\
+:heavy_check_mark: Feature 1;\
+:heavy_check_mark: Feature 2;\
 :x: Feature 3;
 
 ## :rocket: Technologies ##
