@@ -228,7 +228,7 @@ input {
 
 /* ---------------------------------------- Responsive ---------------------------------------- */    
 
-@media (max-width: 991px) {
+@media (max-width: 990px) {
   .navigation {
     display: none;
   }
