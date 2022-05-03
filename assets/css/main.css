@@ -237,7 +237,7 @@ input {
   }
   .hero-img {
     width: 100%;
-    background: url('../img/hero-image-mobile.jpg');
+    background: url('../assets/img/hero-image-mobile.jpg');
     background-size: auto;
   }
   .hero__title {
